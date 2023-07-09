@@ -1,7 +1,10 @@
+import axios from "axios";
 import { React, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { server } from "../../server";
 import styles from "../../styles/styles";
 
 const Singup = () => {
@@ -25,6 +28,19 @@ const Singup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    axios
+      .post(`${server}/user/create-user`, { name, email, password, avatar })
+      .then((res) => {
+        toast.success(res.data.message);
+        setName("");
+        setEmail("");
+        setPassword("");
+        setAvatar();
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message);
+      });
   };
 
   return (

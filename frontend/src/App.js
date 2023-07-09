@@ -1,14 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import { LoginPage, SignupPage } from "./routes.js";
+import { getAllEvents } from "./redux/actions/event";
+import { loadUser } from "./redux/actions/user";
+import Store from "./redux/store";
+import {
+  ActivationPage,
+  HomePage,
+  LoginPage,
+  SignupPage,
+} from "./routes/routes.js";
+
 const App = () => {
+  useEffect(() => {
+    Store.dispatch(loadUser());
+    Store.dispatch(getAllEvents());
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignupPage />} />
+        <Route
+          path="/activation/:activation_token"
+          element={<ActivationPage />}
+        />
       </Routes>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </BrowserRouter>
   );
 };

@@ -4,11 +4,11 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const fileUpload = require("express-fileupload");
 
 app.use(
   cors({
-    origin: ["https://eshop-tutorial-pyri.vercel.app"],
+    // origin: ["https://eshop-tutorial-pyri.vercel.app"],
+    origin: ["http://localhost:3000"],
     credentials: true,
   })
 );
@@ -19,7 +19,6 @@ app.use("/test", (req, res) => {
   res.send("Hello world!");
 });
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
-app.use(fileUpload({ useTempFile: true }));
 
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
@@ -27,6 +26,13 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
     path: "backend/config/.env",
   });
 }
+
+// import routes
+const user = require("./controller/user");
+const event = require("./controller/event");
+
+app.use("/api/v2/user", user);
+app.use("/api/v2/event", event);
 
 // it's for ErrorHandling
 app.use(ErrorHandler);
