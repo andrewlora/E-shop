@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Layout/Header";
+import Categories from "../components/Route/Categories/Categories";
 import Hero from "../components/Route/Hero/Hero";
 
 const HomePage = () => {
@@ -7,6 +8,7 @@ const HomePage = () => {
     <div>
       <Header activeHeading={1} />
       <Hero />
+      <Categories />
     </div>
   );
 };
