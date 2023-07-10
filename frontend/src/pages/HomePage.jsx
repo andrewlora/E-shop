@@ -2,6 +2,7 @@ import React from "react";
 import Events from "../components/Events/Events";
 import Header from "../components/Layout/Header";
 import Categories from "../components/Route/Categories/Categories";
+import FeaturedProduct from "../components/Route/FeaturedProduct/FeaturedProduct";
 import Hero from "../components/Route/Hero/Hero";
 
 const HomePage = () => {
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Hero />
       <Categories />
       <Events />
+      <FeaturedProduct />
     </div>
   );
 };
