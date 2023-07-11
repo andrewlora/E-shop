@@ -10,6 +10,7 @@ import Store from "./redux/store";
 import {
   ActivationPage,
   EventsPage,
+  FAQPage,
   HomePage,
   LoginPage,
   ProductDetailsPage,
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/product/:id" element={<ProductDetailsPage />} />
         <Route path="/events" element={<EventsPage />} />
+        <Route path="/faq" element={<FAQPage />} />
       </Routes>
       <ToastContainer
         position="bottom-center"
