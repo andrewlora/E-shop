@@ -9,6 +9,7 @@ import { loadUser } from "./redux/actions/user";
 import Store from "./redux/store";
 import {
   ActivationPage,
+  EventsPage,
   HomePage,
   LoginPage,
   ProductDetailsPage,
@@ -35,6 +36,7 @@ const App = () => {
         />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/product/:id" element={<ProductDetailsPage />} />
+        <Route path="/events" element={<EventsPage />} />
       </Routes>
       <ToastContainer
         position="bottom-center"
