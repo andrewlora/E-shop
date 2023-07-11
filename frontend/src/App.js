@@ -4,12 +4,14 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import { getAllEvents } from "./redux/actions/event";
+import { getAllProducts } from "./redux/actions/product";
 import { loadUser } from "./redux/actions/user";
 import Store from "./redux/store";
 import {
   ActivationPage,
   HomePage,
   LoginPage,
+  ProductsPage,
   SignupPage,
 } from "./routes/routes.js";
 
@@ -17,6 +19,7 @@ const App = () => {
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(getAllEvents());
+    Store.dispatch(getAllProducts());
   }, []);
 
   return (
@@ -29,6 +32,7 @@ const App = () => {
           path="/activation/:activation_token"
           element={<ActivationPage />}
         />
+        <Route path="/products" element={<ProductsPage />} />
       </Routes>
       <ToastContainer
         position="bottom-center"
