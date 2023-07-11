@@ -11,6 +11,7 @@ import {
   ActivationPage,
   HomePage,
   LoginPage,
+  ProductDetailsPage,
   ProductsPage,
   SignupPage,
 } from "./routes/routes.js";
@@ -33,6 +34,7 @@ const App = () => {
           element={<ActivationPage />}
         />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/product/:id" element={<ProductDetailsPage />} />
       </Routes>
       <ToastContainer
         position="bottom-center"
