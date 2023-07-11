@@ -13,7 +13,13 @@ const EventsPage = () => {
       ) : (
         <div>
           <Header activeHeading={4} />
-          <EventCard active={true} data={allEvents && allEvents[0]} />
+          {allEvents && allEvents.length === 0 ? (
+            <h1 className="text-center w-full pb-[100px] text-[20px]">
+              No events Found!
+            </h1>
+          ) : (
+            <EventCard active={true} data={allEvents && allEvents[0]} />
+          )}
         </div>
       )}
     </>
