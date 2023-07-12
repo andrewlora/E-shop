@@ -5,10 +5,12 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import { getAllEvents } from "./redux/actions/event";
 import { getAllProducts } from "./redux/actions/product";
+import { loadSeller } from "./redux/actions/seller";
 import { loadUser } from "./redux/actions/user";
 import Store from "./redux/store";
 import {
   ActivationPage,
+  CreateShopPage,
   EventsPage,
   FAQPage,
   HomePage,
@@ -24,6 +26,7 @@ import ProtectedRoute from "./routes/protectedRoutes";
 const App = () => {
   useEffect(() => {
     Store.dispatch(loadUser());
+    Store.dispatch(loadSeller());
     Store.dispatch(getAllEvents());
     Store.dispatch(getAllProducts());
   }, []);
@@ -50,6 +53,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/shop-create" element={<CreateShopPage />} />
       </Routes>
       <ToastContainer
         position="bottom-center"

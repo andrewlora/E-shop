@@ -1,4 +1,5 @@
 import ActivationPage from "../pages/ActivationPage";
+import CreateShopPage from "../pages/CreateShopPage";
 import EventsPage from "../pages/EventsPage";
 import FAQPage from "../pages/FAQPage";
 import HomePage from "../pages/HomePage";
@@ -10,6 +11,7 @@ import SignupPage from "../pages/SignupPage";
 
 export {
   ActivationPage,
+  CreateShopPage,
   EventsPage,
   FAQPage,
   HomePage,
