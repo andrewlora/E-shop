@@ -15,8 +15,11 @@ import {
   LoginPage,
   ProductDetailsPage,
   ProductsPage,
+  ProfilePage,
   SignupPage,
 } from "./routes/routes.js";
+
+import ProtectedRoute from "./routes/protectedRoutes";
 
 const App = () => {
   useEffect(() => {
@@ -39,6 +42,14 @@ const App = () => {
         <Route path="/product/:id" element={<ProductDetailsPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/faq" element={<FAQPage />} />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <ProfilePage />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       <ToastContainer
         position="bottom-center"

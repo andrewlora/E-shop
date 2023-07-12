@@ -36,7 +36,7 @@ const ProductDetails = ({ data }) => {
     } else {
       setClick(false);
     }
-  }, [data, wishlist]);
+  }, [data, dispatch, wishlist]);
 
   const incrementCount = () => {
     setCount(count + 1);
