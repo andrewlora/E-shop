@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import LoginShop from "../components/Shop/LoginShop";
+import LoginShop from "../../components/Shop/LoginShop";
 
 const LoginShopPage = () => {
   const navigate = useNavigate();

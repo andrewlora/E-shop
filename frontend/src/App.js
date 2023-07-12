@@ -15,15 +15,21 @@ import {
   FAQPage,
   HomePage,
   LoginPage,
-  LoginShopPage,
   ProductDetailsPage,
   ProductsPage,
   ProfilePage,
   SellerActivationPage,
   SignupPage,
-} from "./routes/routes.js";
+} from "./routes/routes";
+
+import {
+  LoginShopPage,
+  ShopDashboardPage,
+  ShopHomePage,
+} from "./routes/routesShop";
 
 import ProtectedRoute from "./routes/protectedRoutes";
+import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 
 const App = () => {
   useEffect(() => {
@@ -61,6 +67,22 @@ const App = () => {
         />
         <Route path="/shop-create" element={<CreateShopPage />} />
         <Route path="/shop-login" element={<LoginShopPage />} />
+        <Route
+          path="/shop/:id"
+          element={
+            <SellerProtectedRoute>
+              <ShopHomePage />
+            </SellerProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <SellerProtectedRoute>
+              <ShopDashboardPage />
+            </SellerProtectedRoute>
+          }
+        />
       </Routes>
       <ToastContainer
         position="bottom-center"

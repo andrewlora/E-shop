@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import DataGrid from "@mui/material/Grid";
+import { DataGrid } from "@mui/x-data-grid";
 import axios from "axios";
 import { Country, State } from "country-state-city";
 import React, { useEffect, useState } from "react";
