@@ -15,9 +15,11 @@ import {
   FAQPage,
   HomePage,
   LoginPage,
+  LoginShopPage,
   ProductDetailsPage,
   ProductsPage,
   ProfilePage,
+  SellerActivationPage,
   SignupPage,
 } from "./routes/routes.js";
 
@@ -41,6 +43,10 @@ const App = () => {
           path="/activation/:activation_token"
           element={<ActivationPage />}
         />
+        <Route
+          path="/seller/activation/:activation_token"
+          element={<SellerActivationPage />}
+        />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/product/:id" element={<ProductDetailsPage />} />
         <Route path="/events" element={<EventsPage />} />
@@ -54,6 +60,7 @@ const App = () => {
           }
         />
         <Route path="/shop-create" element={<CreateShopPage />} />
+        <Route path="/shop-login" element={<LoginShopPage />} />
       </Routes>
       <ToastContainer
         position="bottom-center"
