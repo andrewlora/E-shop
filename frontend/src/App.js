@@ -30,6 +30,7 @@ import {
   ShopEventsPage,
   ShopHomePage,
   ShopProductsPage,
+  ShopSettingsPage,
 } from "./routes/routesShop";
 
 import ProtectedRoute from "./routes/protectedRoutes";
@@ -116,6 +117,14 @@ const App = () => {
           element={
             <SellerProtectedRoute>
               <ShopEventsPage />
+            </SellerProtectedRoute>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <SellerProtectedRoute>
+              <ShopSettingsPage />
             </SellerProtectedRoute>
           }
         />
