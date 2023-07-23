@@ -22,7 +22,6 @@ router.post("/create-user", async (req, res, next) => {
     const myCloud = await cloudinary.v2.uploader.upload(avatar, {
       folder: "avatars",
     });
-    console.log(myCloud);
     const user = {
       name: name,
       email: email,
@@ -32,9 +31,7 @@ router.post("/create-user", async (req, res, next) => {
         url: myCloud.secure_url,
       },
     };
-    console.log("user: ", user);
     const activationToken = createActivationToken(user);
-    console.log("activationToken: ", activationToken);
     //const activationUrl = `https://eshop.vercel.app/activation/${activationToken}`;
     const activationUrl = `http://localhost:3000/activation/${activationToken}`;
 

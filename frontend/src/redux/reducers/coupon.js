@@ -2,58 +2,59 @@ import { createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
   isLoading: false,
+  coupons: [],
 };
 
-export const productReducer = createReducer(initialState, {
-  productCreateRequest: (state) => {
+export const couponReducer = createReducer(initialState, {
+  couponCreateRequest: (state) => {
     state.isLoading = true;
   },
-  productCreateSuccess: (state, action) => {
+  couponCreateSuccess: (state, action) => {
     state.isLoading = false;
-    state.product = action.payload;
+    state.coupon = action.payload;
     state.success = true;
   },
-  productCreateFail: (state, action) => {
+  couponCreateFail: (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
     state.success = false;
   },
 
-  // get all products of shop
-  getAllProductsShopRequest: (state) => {
+  // get coupons of shop
+  getCouponsShopRequest: (state) => {
     state.isLoading = true;
   },
-  getAllProductsShopSuccess: (state, action) => {
+  getCouponsShopSuccess: (state, action) => {
     state.isLoading = false;
-    state.products = action.payload;
+    state.coupons = action.payload;
   },
-  getAllProductsShopFailed: (state, action) => {
+  getCouponsShopFailed: (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
   },
 
-  // delete product of a shop
-  deleteProductRequest: (state) => {
+  // delete coupon of a shop
+  deleteCouponRequest: (state) => {
     state.isLoading = true;
   },
-  deleteProductSuccess: (state, action) => {
+  deleteCouponSuccess: (state, action) => {
     state.isLoading = false;
     state.message = action.payload;
   },
-  deleteProductFailed: (state, action) => {
+  deleteCouponFailed: (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
   },
 
-  // get all products
-  getAllProductsRequest: (state) => {
+  // get coupons
+  getCouponsRequest: (state) => {
     state.isLoading = true;
   },
-  getAllProductsSuccess: (state, action) => {
+  getCouponsSuccess: (state, action) => {
     state.isLoading = false;
-    state.allProducts = action.payload;
+    state.coupons = action.payload;
   },
-  getAllProductsFailed: (state, action) => {
+  getCouponsFailed: (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
   },

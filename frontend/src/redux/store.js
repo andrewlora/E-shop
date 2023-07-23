@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { cartReducer } from "./reducers/cart";
+import { couponReducer } from "./reducers/coupon";
 import { eventReducer } from "./reducers/event";
 import { orderReducer } from "./reducers/order";
 import { productReducer } from "./reducers/product";
@@ -16,6 +17,7 @@ const Store = configureStore({
     products: productReducer,
     wishlist: wishlistReducer,
     order: orderReducer,
+    coupons: couponReducer,
   },
 });
 

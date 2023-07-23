@@ -24,6 +24,7 @@ import {
 
 import {
   LoginShopPage,
+  ShopCouponsPage,
   ShopCreateEventsPage,
   ShopCreateProductPage,
   ShopDashboardPage,
@@ -101,6 +102,14 @@ const App = () => {
           element={
             <SellerProtectedRoute>
               <ShopProductsPage />
+            </SellerProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard-coupons"
+          element={
+            <SellerProtectedRoute>
+              <ShopCouponsPage />
             </SellerProtectedRoute>
           }
         />
