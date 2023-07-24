@@ -13,8 +13,6 @@ import { loadUser } from "./redux/actions/user";
 import Store from "./redux/store";
 import { server } from "./server";
 
-// TODO: Track order page
-
 import {
   ActivationPage,
   BestSellingPage,
@@ -32,6 +30,7 @@ import {
   ProfilePage,
   SellerActivationPage,
   SignupPage,
+  TrackOrderPage,
 } from "./routes/routes";
 
 import {
@@ -122,6 +121,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <OrderDetailsPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/user/track/order/:id"
+          element={
+            <ProtectedRoute>
+              <TrackOrderPage />
             </ProtectedRoute>
           }
         />

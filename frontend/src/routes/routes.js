@@ -14,6 +14,7 @@ import ProductsPage from "../pages/ProductsPage";
 import ProfilePage from "../pages/ProfilePage";
 import SellerActivationPage from "../pages/SellerActivationPage";
 import SignupPage from "../pages/SignupPage";
+import TrackOrderPage from "../pages/TrackOrderPage";
 
 export {
   ActivationPage,
@@ -32,4 +33,5 @@ export {
   ProfilePage,
   SellerActivationPage,
   SignupPage,
+  TrackOrderPage,
 };
