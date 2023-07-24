@@ -6,6 +6,7 @@ import ShopDashboardPage from "../pages/Shop/ShopDashboardPage";
 import ShopEventsPage from "../pages/Shop/ShopEventsPage";
 import ShopHomePage from "../pages/Shop/ShopHomePage";
 import ShopOrderDetails from "../pages/Shop/ShopOrderDetails";
+import ShopOrdersPage from "../pages/Shop/ShopOrdersPage";
 import ShopPreviewPage from "../pages/Shop/ShopPreviewPage";
 import ShopProductsPage from "../pages/Shop/ShopProductsPage";
 import ShopSettingsPage from "../pages/Shop/ShopSettingsPage";
@@ -19,6 +20,7 @@ export {
   ShopEventsPage,
   ShopHomePage,
   ShopOrderDetails,
+  ShopOrdersPage,
   ShopPreviewPage,
   ShopProductsPage,
   ShopSettingsPage,
