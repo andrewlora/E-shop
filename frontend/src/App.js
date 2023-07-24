@@ -13,9 +13,6 @@ import { loadUser } from "./redux/actions/user";
 import Store from "./redux/store";
 import { server } from "./server";
 
-// TODO: Checkout page
-// TODO: Payment Page
-// TODO: Order Success Page
 // TODO: Order Detail page
 // TODO: Track order page
 
@@ -28,6 +25,7 @@ import {
   FAQPage,
   HomePage,
   LoginPage,
+  OrderSuccessPage,
   PaymentPage,
   ProductDetailsPage,
   ProductsPage,
@@ -108,6 +106,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/order/success" element={<OrderSuccessPage />} />
         <Route
           path="/profile"
           element={
