@@ -11,6 +11,9 @@ import { loadUser } from "./redux/actions/user";
 import Store from "./redux/store";
 import { server } from "./server";
 
+// TODO: Create Refunds page
+// TODO: Create withdraw money page
+
 import {
   ActivationPage,
   BestSellingPage,
@@ -43,6 +46,7 @@ import {
   ShopOrdersPage,
   ShopPreviewPage,
   ShopProductsPage,
+  ShopRefundsPage,
   ShopSettingsPage,
 } from "./routes/routesShop";
 
@@ -204,6 +208,14 @@ const App = () => {
           element={
             <SellerProtectedRoute>
               <ShopOrdersPage />
+            </SellerProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard-refunds"
+          element={
+            <SellerProtectedRoute>
+              <ShopRefundsPage />
             </SellerProtectedRoute>
           }
         />
