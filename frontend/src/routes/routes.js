@@ -1,4 +1,5 @@
 import ActivationPage from "../pages/ActivationPage";
+import BestSellingPage from "../pages/BestSellingPage";
 import CreateShopPage from "../pages/CreateShopPage";
 import EventsPage from "../pages/EventsPage";
 import FAQPage from "../pages/FAQPage";
@@ -12,6 +13,7 @@ import SignupPage from "../pages/SignupPage";
 
 export {
   ActivationPage,
+  BestSellingPage,
   CreateShopPage,
   EventsPage,
   FAQPage,

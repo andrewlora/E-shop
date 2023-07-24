@@ -10,6 +10,7 @@ import { loadUser } from "./redux/actions/user";
 import Store from "./redux/store";
 import {
   ActivationPage,
+  BestSellingPage,
   CreateShopPage,
   EventsPage,
   FAQPage,
@@ -62,6 +63,7 @@ const App = () => {
         />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/product/:id" element={<ProductDetailsPage />} />
+        <Route path="/best-selling" element={<BestSellingPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route
