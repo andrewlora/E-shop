@@ -1,4 +1,7 @@
-import React, { useEffect } from "react";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,14 +11,24 @@ import { getAllProducts } from "./redux/actions/product";
 import { loadSeller } from "./redux/actions/seller";
 import { loadUser } from "./redux/actions/user";
 import Store from "./redux/store";
+import { server } from "./server";
+
+// TODO: Checkout page
+// TODO: Payment Page
+// TODO: Order Success Page
+// TODO: Order Detail page
+// TODO: Track order page
+
 import {
   ActivationPage,
   BestSellingPage,
+  CheckoutPage,
   CreateShopPage,
   EventsPage,
   FAQPage,
   HomePage,
   LoginPage,
+  PaymentPage,
   ProductDetailsPage,
   ProductsPage,
   ProfilePage,
@@ -40,15 +53,36 @@ import ProtectedRoute from "./routes/protectedRoutes";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 
 const App = () => {
+  const [stripeApiKey, setStripeApiKey] = useState("");
+
+  async function getStripeApiKey() {
+    const { data } = await axios.get(`${server}/payment/stripeApiKey`);
+    setStripeApiKey(data.stripeApiKey);
+  }
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
     Store.dispatch(getAllEvents());
     Store.dispatch(getAllProducts());
+    getStripeApiKey();
   }, []);
 
   return (
     <BrowserRouter>
+      {stripeApiKey && (
+        <Elements stripe={loadStripe(stripeApiKey)}>
+          <Routes>
+            <Route
+              path="/payment"
+              element={
+                <ProtectedRoute>
+                  <PaymentPage />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </Elements>
+      )}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -66,6 +100,14 @@ const App = () => {
         <Route path="/best-selling" element={<BestSellingPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/faq" element={<FAQPage />} />
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              <CheckoutPage />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/profile"
           element={
