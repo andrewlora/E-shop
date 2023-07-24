@@ -1,5 +1,3 @@
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -41,18 +39,20 @@ import {
   ShopDashboardPage,
   ShopEventsPage,
   ShopHomePage,
-  ShopOrderDetails,
+  ShopOrderDetailsPage,
   ShopOrdersPage,
   ShopPreviewPage,
   ShopProductsPage,
   ShopSettingsPage,
 } from "./routes/routesShop";
 
-import ProtectedRoute from "./routes/protectedRoutes";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
+import ProtectedRoute from "./routes/protectedRoutes";
 
 const App = () => {
-  const [stripeApiKey, setStripeApiKey] = useState("");
+  const [stripeApiKey, setStripeApiKey] = useState(null);
 
   async function getStripeApiKey() {
     const { data } = await axios.get(`${server}/payment/stripeApiKey`);
@@ -195,7 +195,7 @@ const App = () => {
           path="/order/:id"
           element={
             <SellerProtectedRoute>
-              <ShopOrderDetails />
+              <ShopOrderDetailsPage />
             </SellerProtectedRoute>
           }
         />

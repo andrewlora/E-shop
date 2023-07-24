@@ -3,7 +3,7 @@ import Footer from "../../components/Layout/Footer";
 import DashboardHeader from "../../components/Shop/Layout/DashboardHeader";
 import OrderDetails from "../../components/Shop/OrderDetails";
 
-const ShopOrderDetails = () => {
+const ShopOrderDetailsPage = () => {
   return (
     <div>
       <DashboardHeader />
@@ -13,4 +13,4 @@ const ShopOrderDetails = () => {
   );
 };
 
-export default ShopOrderDetails;
+export default ShopOrderDetailsPage;

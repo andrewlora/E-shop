@@ -5,7 +5,7 @@ import ShopCreateProductPage from "../pages/Shop/ShopCreateProductPage";
 import ShopDashboardPage from "../pages/Shop/ShopDashboardPage";
 import ShopEventsPage from "../pages/Shop/ShopEventsPage";
 import ShopHomePage from "../pages/Shop/ShopHomePage";
-import ShopOrderDetails from "../pages/Shop/ShopOrderDetails";
+import ShopOrderDetailsPage from "../pages/Shop/ShopOrderDetailsPage";
 import ShopOrdersPage from "../pages/Shop/ShopOrdersPage";
 import ShopPreviewPage from "../pages/Shop/ShopPreviewPage";
 import ShopProductsPage from "../pages/Shop/ShopProductsPage";
@@ -19,7 +19,7 @@ export {
   ShopDashboardPage,
   ShopEventsPage,
   ShopHomePage,
-  ShopOrderDetails,
+  ShopOrderDetailsPage,
   ShopOrdersPage,
   ShopPreviewPage,
   ShopProductsPage,

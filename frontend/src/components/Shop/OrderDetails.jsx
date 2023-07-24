@@ -59,8 +59,6 @@ const OrderDetails = () => {
       });
   };
 
-  console.log(data?.status);
-
   return (
     <div className={`py-4 min-h-screen ${styles.section}`}>
       <div className="w-full flex items-center justify-between">
@@ -91,7 +89,7 @@ const OrderDetails = () => {
       <br />
       {data &&
         data?.cart.map((item, index) => (
-          <div className="w-full flex items-start mb-5">
+          <div className="w-full flex items-start mb-5" key={index}>
             <img
               src={`${item.images[0]?.url}`}
               alt=""
