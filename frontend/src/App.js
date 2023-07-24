@@ -42,6 +42,7 @@ import {
   ShopDashboardPage,
   ShopEventsPage,
   ShopHomePage,
+  ShopOrderDetails,
   ShopPreviewPage,
   ShopProductsPage,
   ShopSettingsPage,
@@ -171,6 +172,14 @@ const App = () => {
           element={
             <SellerProtectedRoute>
               <ShopEventsPage />
+            </SellerProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/order/:id"
+          element={
+            <SellerProtectedRoute>
+              <ShopOrderDetails />
             </SellerProtectedRoute>
           }
         />
