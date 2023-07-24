@@ -30,6 +30,7 @@ import {
   ShopDashboardPage,
   ShopEventsPage,
   ShopHomePage,
+  ShopPreviewPage,
   ShopProductsPage,
   ShopSettingsPage,
 } from "./routes/routesShop";
@@ -71,6 +72,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/shop/preview/:id" element={<ShopPreviewPage />} />
         <Route path="/shop-create" element={<CreateShopPage />} />
         <Route path="/shop-login" element={<LoginShopPage />} />
         <Route
