@@ -11,9 +11,6 @@ import { loadUser } from "./redux/actions/user";
 import Store from "./redux/store";
 import { server } from "./server";
 
-// TODO: Create Refunds page
-// TODO: Create withdraw money page
-
 import {
   ActivationPage,
   BestSellingPage,
@@ -48,6 +45,7 @@ import {
   ShopProductsPage,
   ShopRefundsPage,
   ShopSettingsPage,
+  ShopWithDrawMoneyPage,
 } from "./routes/routesShop";
 
 import { Elements } from "@stripe/react-stripe-js";
@@ -216,6 +214,14 @@ const App = () => {
           element={
             <SellerProtectedRoute>
               <ShopRefundsPage />
+            </SellerProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard-withdraw-money"
+          element={
+            <SellerProtectedRoute>
+              <ShopWithDrawMoneyPage />
             </SellerProtectedRoute>
           }
         />
